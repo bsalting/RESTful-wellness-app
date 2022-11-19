@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import Home from './Home';
 import Login from './Login';
+import Nav from './Nav';
+import Meditation from './Meditation/Meditation';
 import { useSelector, useDispatch } from 'react-redux';
 import { loginWithToken } from '../store';
-import { Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
   const { auth } = useSelector((state) => state);
@@ -18,9 +20,13 @@ const App = () => {
       {auth.id ? <Home /> : <Login />}
       {!!auth.id && (
         <div>
-          <nav>
-            <Link to="/">Home</Link>
-          </nav>
+          <Nav />
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/meditation" element={<Meditation />} />
+            {/* <Route exact path="/park" element={<Park />} />
+            <Route exact path="/journal" element={<Journal />} /> */}
+          </Routes>
         </div>
       )}
     </div>
