@@ -23,10 +23,10 @@ const App = () => {
         <div>
           <Nav />
           <Routes>
-            <Route exact path="/" element={<Landing />} />
-            <Route exact path="/meditation" element={<Meditation />} />
-            <Route exact path="/park" element={<Park />} />
+            <Route path="/" element={<Landing />} />
+            <Route path="/meditation" element={<Meditation />} />
             {/* <Route exact path="/journal" element={<Journal />} />  */}
+            <Route path="/park" element={<Park />} />
           </Routes>
         </div>
       )}
