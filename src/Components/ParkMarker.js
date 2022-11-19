@@ -1,6 +1,6 @@
 import React from 'react';
 import { MarkerF, InfoWindowF } from '@react-google-maps/api';
-import treeMarker from '../assets/tree-marker.svg';
+// import treeMarker from '../assets/tree-marker.svg';
 
 /* customizing the MarkerF component allows for each marker to maintain its own active state, 
 showing its associated InfoWindowF component when clicked and hiding it on window's closeClick event */
@@ -12,7 +12,7 @@ function ParkMarker(props) {
     <MarkerF
       position={props.result.geometry.location}
       icon={
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Wiki_Loves_Earth_map_marker.svg/600px-Wiki_Loves_Earth_map_marker.svg.png'
+        'https://www.freeiconspng.com/thumbs/small-tree-icon/small-tree-icon-21.png'
       }
       onClick={() => setIsActive(true)}
     >

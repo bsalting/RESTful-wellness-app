@@ -67,13 +67,10 @@ function Park() {
   }
 
   return (
-    <>
+    <div>
       <div className="centered">
         <h1>Get Fresh Air</h1>
-        <p>
-          Use the Park Locator to find your nearest green spaces. Click the
-          markers to get details about each park.
-        </p>
+        <p>Nearest green spaces near you:</p>
       </div>
 
       <div className="map-box">
@@ -88,7 +85,7 @@ function Park() {
           {parkMarkers}
         </GoogleMap>
       </div>
-    </>
+    </div>
   );
 }
 
@@ -96,8 +93,8 @@ function ErrorDisplay(props) {
   return (
     <div className="centered">
       <h1>Get Fresh Air</h1>
-      <p>Please enable browser geolocation to use this feature. </p>
-      <p className="strong"> Waiting for map to load...</p>
+      <p> Note: Enable browser geolocation services for this feature to work</p>
+      <p className="strong"> Loading map... Searching for parks...</p>
     </div>
   );
 }
