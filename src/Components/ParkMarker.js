@@ -7,9 +7,7 @@ function ParkMarker(props) {
   return (
     <MarkerF
       position={props.result.geometry.location}
-      icon={
-        'https://www.freeiconspng.com/thumbs/small-tree-icon/small-tree-icon-21.png'
-      }
+      icon={'/static/tree.svg'}
       onClick={() => setIsActive(true)}
     >
       {isActive && (

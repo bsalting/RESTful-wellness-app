@@ -69,14 +69,16 @@ const Meditation = () => {
       <div className="timer">{formatTime(elapsedTime)}</div>
       <div className="buttons">
         <img
-          src="https://www.freeiconspng.com/uploads/play-button-icon-png-17.png"
+          // src="https://www.freeiconspng.com/uploads/play-button-icon-png-17.png"
+          src="/static/play-button.svg"
           height="105px"
           alt="Play"
           onClick={startMeditation}
           className={isPlaying ? 'disabled' : 'enabled'}
         ></img>
         <img
-          src="https://cdn4.iconfinder.com/data/icons/multimedia-35/52/stop-button-512.png"
+          // src="https://cdn4.iconfinder.com/data/icons/multimedia-35/52/stop-button-512.png"
+          src="/static/stop-button.svg"
           height="100px"
           alt="Stop"
           onClick={stopMeditation}

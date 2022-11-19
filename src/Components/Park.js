@@ -42,7 +42,7 @@ function Park() {
     service.nearbySearch(request, (results, status) => {
       if (status === google.maps.places.PlacesServiceStatus.OK && results) {
         const bounds = new google.maps.LatLngBounds();
-        for (let i = 0; i < results.length && i < 5; i++) {
+        for (let i = 0; i < results.length && i < 10; i++) {
           let marker = (
             <ParkMarker key={results[i].place_id} result={results[i]} />
           );
@@ -81,7 +81,8 @@ function ErrorDisplay(props) {
   return (
     <div className="centered">
       <h1>Get Fresh Air</h1>
-      <p className="strong"> Loading map... Searching for parks...</p>
+      <p className="strong"> Searching for parks...</p>
+      <img src="/static/shoes.png" />
     </div>
   );
 }
