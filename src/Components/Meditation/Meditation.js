@@ -1,6 +1,5 @@
 import React from 'react';
 import { audioList } from './audioList';
-
 // To do: SVG doesn't load despite webpack loader added.
 // Use img url for now.
 

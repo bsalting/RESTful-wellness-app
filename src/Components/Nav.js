@@ -4,10 +4,7 @@ import { NavLink } from 'react-router-dom';
 function Nav() {
   return (
     <nav>
-      <span className="logo-span">
-        {/* <img src={brain} alt="brain logo"></img> */}
-        Wellness
-      </span>
+      <span className="logo-span">Quiet Time</span>
       <span className="link-span">
         <NavLink to="/meditation">Meditate</NavLink>
         <NavLink to="/park">Fresh Air</NavLink>

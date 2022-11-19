@@ -3,13 +3,13 @@ const User = require('./User');
 
 const syncAndSeed = async () => {
   await conn.sync({ force: true });
-  const [bos] = await Promise.all([
-    User.create({ username: 'bos', password: '123' }),
+  const [Beejay] = await Promise.all([
+    User.create({ username: 'Beejay', password: '123' }),
   ]);
 
   return {
     users: {
-      bos,
+      Beejay,
     },
   };
 };

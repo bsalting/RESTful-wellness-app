@@ -18,7 +18,6 @@ const App = () => {
 
   return (
     <div>
-      <h1>Wellness</h1>
       {auth.id ? <Home /> : <Login />}
       {!!auth.id && (
         <div>
