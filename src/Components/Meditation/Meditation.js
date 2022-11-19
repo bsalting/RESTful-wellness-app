@@ -1,26 +1,22 @@
 import React from 'react';
-import playButton from '../../assets/play-button.svg';
-import stopButton from '../../assets/stop-button.svg';
 import { audioList } from './audioList';
 
 const Meditation = () => {
   const [startTime, setStartTime] = React.useState(null);
   const [elapsedTime, setElapsedTime] = React.useState(null);
   const [isPlaying, setPlaying] = React.useState(false);
-
   const [musicChoice, setMusicChoice] = React.useState(0);
 
   function formatTime(time) {
-    if (!time) return '0:00';
+    if (!time) return '00:00';
     time = time / 1000;
     let seconds = Math.floor(time % 60);
     let secondString = seconds < 10 ? '0' + seconds : seconds;
     time = Math.floor(time / 60);
     let minutes = time % 60;
-    return `${minutes}:${secondString}`;
+    return `0${minutes}:${secondString}`;
   }
 
-  // select dropdown options
   const selectOptions = audioList.map((song, index) => {
     return (
       <option key={song.title} value={index}>
@@ -34,16 +30,12 @@ const Meditation = () => {
     audio.pause();
     audio.currentTime = 0;
     setMusicChoice(event.target.value);
-
     if (isPlaying) {
-      /* play() returns a promise, using setTimeout to prevent this exception
-            "Uncaught (in promise) DOMException: The play() request was interrupted by a new load request" */
       setTimeout(() => audio.play(), 100);
     }
   }
 
   function startMeditation() {
-    // clear elapsed time first so display immediately shows 0:00
     setElapsedTime(null);
     document.getElementById('audio').play();
     setPlaying(true);
@@ -62,7 +54,6 @@ const Meditation = () => {
       const interval = setInterval(() => {
         setElapsedTime(new Date().getTime() - startTime.getTime());
       }, 1000);
-
       return () => clearInterval(interval);
     }
   }, [isPlaying]);
@@ -90,11 +81,9 @@ const Meditation = () => {
           className={isPlaying ? 'enabled' : 'disabled'}
         ></img>
 
-        {/* music loops back to beginning at end of mp3 */}
         <audio loop id="audio" src={audioList[musicChoice].file}></audio>
       </div>
 
-      {/* music choice form */}
       <div className="buttons">
         <select
           id="musicChoice"
