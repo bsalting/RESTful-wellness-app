@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Home from './Home';
 import Login from './Login';
 import Nav from './Nav';
+import Park from './Park';
 import Meditation from './Meditation/Meditation';
 import { useSelector, useDispatch } from 'react-redux';
 import { loginWithToken } from '../store';
@@ -24,8 +25,8 @@ const App = () => {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/meditation" element={<Meditation />} />
-            {/* <Route exact path="/park" element={<Park />} />
-            <Route exact path="/journal" element={<Journal />} /> */}
+            <Route exact path="/park" element={<Park />} />
+            {/* <Route exact path="/journal" element={<Journal />} />  */}
           </Routes>
         </div>
       )}

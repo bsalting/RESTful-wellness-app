@@ -1,6 +1,9 @@
 import React from 'react';
 import { audioList } from './audioList';
 
+// To do: SVG doesn't load despite webpack loader added.
+// Use img url for now.
+
 const Meditation = () => {
   const [startTime, setStartTime] = React.useState(null);
   const [elapsedTime, setElapsedTime] = React.useState(null);
