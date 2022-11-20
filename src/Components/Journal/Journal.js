@@ -8,27 +8,21 @@ const Journal = () => {
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
 
-  // past entries from LocalStorage. use lazy state initialization
   const [pastEntries, setPastEntries] = useState(
     () => JSON.parse(localStorage.getItem('journalEntries')) || []
   );
 
-  // past entry optionally selected in sidebar
   const [selectedEntry, setSelectedEntry] = useState(null);
 
-  // load a new question and save entries array to localStorage when new entry is saved
   useEffect(() => {
-    // update the localStorage copy of entries array
     localStorage.setItem('journalEntries', JSON.stringify(pastEntries));
 
-    // need an IIFE to fetch new question because useEffect can't be async
     (async () => {
       const data = await getQuestion();
-      setQuestion(data.question ? data.question : 'Error loading question');
+      setQuestion(data.question ? data.question : 'Fetching question...');
     })();
   }, [pastEntries]);
 
-  // handle journal input change
   function handleChange(event) {
     setAnswer(event.target.value);
   }
