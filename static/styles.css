@@ -1,5 +1,8 @@
 body {
-  font-family: verdana;
+  font-family: 'Lucida Grande';
+  color: #333333;
+  margin: 0;
+  padding: 0;
 }
 
 form {
@@ -11,7 +14,36 @@ form > * {
   margin: 1rem;
 }
 
+#div-nav {
+  background-color: #ede4e0;
+}
 nav {
   display: flex;
   justify-content: space-around;
+}
+
+nav {
+  color: #333333;
+  background-color: #c8dbbe;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+nav a {
+  color: #333333;
+  margin: 0 20px;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.active {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.active:hover {
+  cursor: default;
 }
