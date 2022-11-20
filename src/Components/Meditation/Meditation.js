@@ -61,44 +61,49 @@ const Meditation = () => {
   }, [isPlaying]);
 
   return (
-    <>
+    <div>
       <div className="centered">
-        <h1>Meditation Timer</h1>
+        <h1>Minutes of Mindfulness</h1>
         <p>Some text goes here</p>
       </div>
-      <div className="timer">{formatTime(elapsedTime)}</div>
-      <div className="buttons">
-        <img
-          // src="https://www.freeiconspng.com/uploads/play-button-icon-png-17.png"
-          src="/static/play-button.svg"
-          height="105px"
-          alt="Play"
-          onClick={startMeditation}
-          className={isPlaying ? 'disabled' : 'enabled'}
-        ></img>
-        <img
-          // src="https://cdn4.iconfinder.com/data/icons/multimedia-35/52/stop-button-512.png"
-          src="/static/stop-button.svg"
-          height="100px"
-          alt="Stop"
-          onClick={stopMeditation}
-          className={isPlaying ? 'enabled' : 'disabled'}
-        ></img>
-
-        <audio loop id="audio" src={audioList[musicChoice].file}></audio>
+      <div>
+        <img src="https://www.verywellhealth.com/thmb/_9iR1LWivMoArUVcXtGKWNVcWgg=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1194155288-63c50e4a917848bd863083e014df757c.jpg"></img>
       </div>
+      <div>
+        <div className="timer">{formatTime(elapsedTime)}</div>
+        <div className="buttons">
+          <img
+            // src="https://www.freeiconspng.com/uploads/play-button-icon-png-17.png"
+            src="/static/play-button.svg"
+            height="105px"
+            alt="Play"
+            onClick={startMeditation}
+            className={isPlaying ? 'disabled' : 'enabled'}
+          ></img>
+          <img
+            // src="https://cdn4.iconfinder.com/data/icons/multimedia-35/52/stop-button-512.png"
+            src="/static/stop-button.svg"
+            height="100px"
+            alt="Stop"
+            onClick={stopMeditation}
+            className={isPlaying ? 'enabled' : 'disabled'}
+          ></img>
 
-      <div className="buttons">
-        <select
-          id="musicChoice"
-          value={musicChoice}
-          onChange={formChange}
-          name="musicChoice"
-        >
-          {selectOptions}
-        </select>
+          <audio loop id="audio" src={audioList[musicChoice].file}></audio>
+        </div>
+
+        <div className="buttons">
+          <select
+            id="musicChoice"
+            value={musicChoice}
+            onChange={formChange}
+            name="musicChoice"
+          >
+            {selectOptions}
+          </select>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

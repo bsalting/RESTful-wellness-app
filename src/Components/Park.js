@@ -57,7 +57,7 @@ function Park() {
   return (
     <div>
       <div className="centered">
-        <h1>Get Fresh Air</h1>
+        <h1>Some Fresh Air</h1>
         <p>Nearest green spaces near you:</p>
       </div>
 
@@ -80,9 +80,13 @@ function Park() {
 function ErrorDisplay(props) {
   return (
     <div className="centered">
-      <h1>Get Fresh Air</h1>
-      <p className="strong"> Searching for parks...</p>
-      <img src="/static/shoes.png" />
+      <h1>Some Fresh Air</h1>
+      <p className="strong">You're one walk away from a good mood...</p>
+      <img
+        src="https://i.pinimg.com/originals/c4/f0/38/c4f038c63e6a9bbcde0d5fc574487358.jpg"
+        width="1100px"
+        height="600px"
+      />
     </div>
   );
 }
