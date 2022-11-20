@@ -58,7 +58,7 @@ const Login = () => {
                 textDecoration: 'none',
               }}
             >
-              Quiet Time
+              RESTful
             </Typography>
             <br />
             <br />

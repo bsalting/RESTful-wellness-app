@@ -1,24 +1,23 @@
-import React from 'react';
-//import { getQuestion } from './gratitudeFetch';
+import React, { useState, useEffect } from 'react';
+import { getQuestion } from './gratitudeFetch';
 import { nanoid } from 'nanoid';
 import Sidebar from './Sidebar';
 import PastEntry from './PastEntry';
 
 const Journal = () => {
-  // current question and textarea answer
-  const [question, setQuestion] = React.useState('');
-  const [answer, setAnswer] = React.useState('');
+  const [question, setQuestion] = useState('');
+  const [answer, setAnswer] = useState('');
 
   // past entries from LocalStorage. use lazy state initialization
-  const [pastEntries, setPastEntries] = React.useState(
+  const [pastEntries, setPastEntries] = useState(
     () => JSON.parse(localStorage.getItem('journalEntries')) || []
   );
 
   // past entry optionally selected in sidebar
-  const [selectedEntry, setSelectedEntry] = React.useState(null);
+  const [selectedEntry, setSelectedEntry] = useState(null);
 
   // load a new question and save entries array to localStorage when new entry is saved
-  React.useEffect(() => {
+  useEffect(() => {
     // update the localStorage copy of entries array
     localStorage.setItem('journalEntries', JSON.stringify(pastEntries));
 
@@ -34,20 +33,14 @@ const Journal = () => {
     setAnswer(event.target.value);
   }
 
-  // save new entry to entries array with date and id
   function handleSubmit() {
-    // create entry object with id, date, question, and answer
     const newEntry = {
       id: nanoid(),
       date: new Date(),
       question: question,
       answer: answer,
     };
-
-    // add new entry to pastEntries
     setPastEntries([newEntry, ...pastEntries]);
-
-    // clear the textarea and get a new question
     document.getElementById('answer').value = '';
   }
 
@@ -61,6 +54,10 @@ const Journal = () => {
 
   return (
     <div className="wrapper">
+      <div>
+        <h3>Deliberate Instrospection</h3>
+        <p>Unlock the many benefits of journaling</p>
+      </div>
       {pastEntries.length > 0 && (
         <Sidebar
           entries={pastEntries}
@@ -73,29 +70,31 @@ const Journal = () => {
         <PastEntry entryDetails={getPastEntryData(selectedEntry)} />
       ) : (
         <section className="centered">
-          <h1>Deliberate Reflection</h1>
+          <h1>New entry</h1>
           <div>
-            <img src="/static/journal.png" width="600"></img>
-          </div>
-          <p>
-            Take a moment to reflect and write about the following question:{' '}
-          </p>
-          <p className="strong">
-            {question ? question : 'Question loading...'}
-          </p>
-          <textarea
-            onChange={handleChange}
-            id="answer"
-            name="answer"
-          ></textarea>
-          <div className="buttons">
-            <button onClick={handleCancel} id="cancel-button">
-              Cancel
-            </button>
-            <button onClick={handleSubmit}>Save</button>
+            <p>
+              Take a moment to reflect and write about the following question:{' '}
+            </p>
+            <p className="strong">
+              {question ? question : 'Question loading...'}
+            </p>
+            <textarea
+              onChange={handleChange}
+              id="answer"
+              name="answer"
+            ></textarea>
+            <div className="buttons">
+              <button onClick={handleCancel} id="cancel-button">
+                Cancel
+              </button>
+              <button onClick={handleSubmit}>Save</button>
+            </div>
           </div>
         </section>
       )}
+      <div>
+        <img src="/static/journal.png" width="600"></img>
+      </div>
     </div>
   );
 };

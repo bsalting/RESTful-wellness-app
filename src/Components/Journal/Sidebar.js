@@ -2,6 +2,7 @@ import React from 'react';
 
 function Sidebar(props) {
   const entryElements = props.entries.map((entry) => {
+    // "selected entry" state is maintained in the parent
     return (
       <div
         className={
@@ -18,14 +19,14 @@ function Sidebar(props) {
   });
   return (
     <section className="sidebar">
-      <h3>Journal Entries</h3>
+      <h3>All Journal Entries</h3>
       <div
         className={
           props.selectedEntry ? 'sidebar-entry' : 'sidebar-entry selected-entry'
         }
         onClick={() => props.setSelectedEntry(null)}
       >
-        New journal entry
+        Create an entry
       </div>
       {entryElements}
     </section>

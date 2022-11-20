@@ -62,7 +62,7 @@ const Meditation = () => {
     <div>
       <div className="centered">
         <h1>Minutes of Mindfulness</h1>
-        <p>Some text goes here</p>
+        <p>Pause. Be still, and fully present.</p>
       </div>
       <div>
         <img src="https://www.verywellhealth.com/thmb/_9iR1LWivMoArUVcXtGKWNVcWgg=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1194155288-63c50e4a917848bd863083e014df757c.jpg" />

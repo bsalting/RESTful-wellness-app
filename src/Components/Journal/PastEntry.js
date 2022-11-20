@@ -9,22 +9,24 @@ const options = {
   minute: 'numeric',
 };
 
-function PastEntry(props) {
+const PastEntry = (props) => {
   return (
-    <section className="centered">
-      <h1>Journal</h1>
-      <section className="past-entry">
-        <p className="strong">Date</p>
-        {new Date(props.entryDetails.date).toLocaleDateString('en-US', options)}
-
-        <p className="strong">Question</p>
-        {props.entryDetails.question}
-
-        <p className="strong">Answer</p>
-        {props.entryDetails.answer}
+    <div>
+      <section className="centered">
+        <h1>Past Entry</h1>
+        <section className="past-entry">
+          <p className="strong">
+            {new Date(props.entryDetails.date).toLocaleDateString(
+              'en-US',
+              options
+            )}
+          </p>
+          <p>{props.entryDetails.question}</p>
+          <p> {props.entryDetails.answer}</p>
+        </section>
       </section>
-    </section>
+    </div>
   );
-}
+};
 
 export default PastEntry;
