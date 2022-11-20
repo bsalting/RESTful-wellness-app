@@ -46,19 +46,21 @@ const Login = () => {
             }}
           >
             <br />
+            <img
+              src="https://media.istockphoto.com/id/1300620744/vector/balancing-zen-stone-vector-icon-illustration.jpg?s=612x612&w=0&k=20&c=hnnXJ9Q2EZXf45t1WLKAGHaohGGKkROwLYZZYKDUqnQ="
+              width="100"
+            ></img>
             <Typography
-              component="h1"
               variant="h4"
               sx={{
-                mr: 2,
                 display: { xs: 'none', md: 'flex' },
+                fontFamily: 'Lucida Grande',
                 fontWeight: 700,
-                letterSpacing: '.3rem',
-                color: 'slate',
+                color: 'slate gray',
                 textDecoration: 'none',
               }}
             >
-              RESTful
+              RESTFul
             </Typography>
             <br />
             <br />
