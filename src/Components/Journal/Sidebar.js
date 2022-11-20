@@ -2,7 +2,6 @@ import React from 'react';
 
 function Sidebar(props) {
   const entryElements = props.entries.map((entry) => {
-    // "selected entry" state is maintained in the parent
     return (
       <div
         className={
