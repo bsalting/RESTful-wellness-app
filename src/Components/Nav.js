@@ -42,7 +42,7 @@ function Nav() {
             <Typography> Reflect </Typography>
           </Button>
         </Link>
-        <Link underline="hover" key={'Give'} href={'#/journal'}>
+        <Link underline="hover" key={'Give'} href={'#/give'}>
           <Button>
             <Typography> Give </Typography>
           </Button>

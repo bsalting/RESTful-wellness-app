@@ -6,6 +6,7 @@ import Nav from './Nav';
 import Meditation from './Meditation/Meditation';
 import Park from './Park';
 import Journal from './Journal/Journal';
+import Give from './Give';
 import { useSelector, useDispatch } from 'react-redux';
 import { loginWithToken } from '../store';
 import { Routes, Route } from 'react-router-dom';
@@ -28,7 +29,7 @@ const App = () => {
             <Route path="/meditation" element={<Meditation />} />
             <Route path="/park" element={<Park />} />
             <Route path="/journal" element={<Journal />} />
-            {/* <Route path="/give" element={<Give />} /> */}
+            <Route path="/give" element={<Give />} />
           </Routes>
         </div>
       )}
