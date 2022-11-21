@@ -77,10 +77,23 @@ const CreateUser = () => {
           }}
         >
           <br />
-          <br />
-          <Typography component="h1" variant="h5">
-            Sign up
+          <img
+            src="https://media.istockphoto.com/id/1300620744/vector/balancing-zen-stone-vector-icon-illustration.jpg?s=612x612&w=0&k=20&c=hnnXJ9Q2EZXf45t1WLKAGHaohGGKkROwLYZZYKDUqnQ="
+            width="100"
+          ></img>
+          <Typography
+            variant="h4"
+            sx={{
+              display: { xs: 'none', md: 'flex' },
+              fontFamily: 'Lucida Grande',
+              fontWeight: 700,
+              color: 'slate gray',
+              textDecoration: 'none',
+            }}
+          >
+            RESTFul
           </Typography>
+          <br />
           <Box component="form" noValidate onSubmit={create} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
