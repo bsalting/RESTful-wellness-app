@@ -165,16 +165,19 @@ const CreateUser = () => {
                 />
               </Grid>
             </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign Up
-            </Button>
             <Grid container justifyContent="center">
               <Grid item>
+                <br />
+                <br />
+                <Button type="submit" variant="contained" sx={{ mt: 3, mb: 2 }}>
+                  Sign Up
+                </Button>
+                <br />
+              </Grid>
+            </Grid>
+            <Grid container justifyContent="center">
+              <Grid item>
+                <br />
                 <Typography>
                   <Link
                     href="/"
@@ -182,7 +185,7 @@ const CreateUser = () => {
                     gutterBottom
                     sx={{ mt: 2 }}
                   >
-                    Have an account? Sign in!
+                    SIGN IN
                   </Link>
                 </Typography>
               </Grid>

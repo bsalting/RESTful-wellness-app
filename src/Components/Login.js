@@ -62,11 +62,16 @@ const Login = () => {
             </Typography>
             <br />
             <br />
-            <Box component="form" noValidate onSubmit={login} sx={{ mt: 1 }}>
+            <Box
+              component="form"
+              noValidate
+              onSubmit={login}
+              sx={{ mt: 1 }}
+              align="center"
+            >
               <TextField
                 margin="normal"
                 required
-                fullWidth
                 id="user"
                 label="Username"
                 name="username"
@@ -76,10 +81,10 @@ const Login = () => {
                 onChange={onChange}
                 variant="standard"
               />
+              <br />
               <TextField
                 margin="normal"
                 required
-                fullWidth
                 name="password"
                 label="Password"
                 type="password"
@@ -90,9 +95,10 @@ const Login = () => {
                 variant="standard"
               />
               <br />
+              <br />
               <Button
                 type="submit"
-                fullWidth
+                // fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >

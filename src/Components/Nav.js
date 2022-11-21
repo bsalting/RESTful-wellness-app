@@ -23,27 +23,27 @@ function Nav() {
       </span>
       <span className="link-span">
         <Link underline="hover" key={'Home'} href={'/'}>
-          <Button>
+          <Button sx={{ margin: 1.5 }}>
             <Typography> Home </Typography>
           </Button>
         </Link>
         <Link underline="hover" key={'Meditate'} href={'#/meditation'}>
-          <Button>
+          <Button sx={{ margin: 1.5 }}>
             <Typography> Meditate </Typography>
           </Button>
         </Link>
         <Link underline="hover" key={'Meander'} href={'#/park'}>
-          <Button>
+          <Button sx={{ margin: 1.5 }}>
             <Typography> Meander </Typography>
           </Button>
         </Link>
         <Link underline="hover" key={'Gratitude'} href={'#/journal'}>
-          <Button>
+          <Button sx={{ margin: 1.5 }}>
             <Typography> Reflect </Typography>
           </Button>
         </Link>
         <Link underline="hover" key={'Give'} href={'#/give'}>
-          <Button>
+          <Button sx={{ margin: 1.5 }}>
             <Typography> Give </Typography>
           </Button>
         </Link>

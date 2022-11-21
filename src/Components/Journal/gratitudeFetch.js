@@ -2,7 +2,7 @@
 const options = {
   method: 'GET',
   headers: {
-    'X-RapidAPI-Key': '4ea22d6f7fmsh7703c9431b9367dp14675cjsnb1f08b5e6743',
+    // 'X-RapidAPI-Key': '4ea22d6f7fmsh7703c9431b9367dp14675cjsnb1f08b5e6743',
     'X-RapidAPI-Host': 'gratitude-questions.p.rapidapi.com',
   },
 };
