@@ -94,6 +94,7 @@ const CreateUser = () => {
                   autoFocus
                   value={user.username}
                   onChange={onChange}
+                  variant="standard"
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -107,6 +108,7 @@ const CreateUser = () => {
                   autoComplete="new-password"
                   value={user.password}
                   onChange={onChange}
+                  variant="standard"
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -120,6 +122,7 @@ const CreateUser = () => {
                   autoFocus
                   value={user.firstName}
                   onChange={onChange}
+                  variant="standard"
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -132,6 +135,7 @@ const CreateUser = () => {
                   autoComplete="family-name"
                   value={user.lastName}
                   onChange={onChange}
+                  variant="standard"
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -144,6 +148,7 @@ const CreateUser = () => {
                   autoComplete="email"
                   value={user.email}
                   onChange={onChange}
+                  variant="standard"
                 />
               </Grid>
             </Grid>
