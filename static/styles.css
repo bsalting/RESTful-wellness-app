@@ -5,7 +5,7 @@ body {
   padding: 0;
 }
 
-/* NAV, HOME STYLES */
+/* NAV, HOME, LANDING STYLES */
 
 nav {
   color: #333333;
@@ -67,6 +67,14 @@ nav {
   cursor: pointer;
   opacity: 0.7;
 }
+
+#horizon {
+  height: 11.2vh;
+  margin: 0;
+  border: 0;
+  background-image: linear-gradient(to bottom, #e5d9b6, #ede4e0);
+}
+
 /* REFLECT STYLES */
 
 .wrapper {
