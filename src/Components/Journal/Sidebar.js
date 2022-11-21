@@ -19,14 +19,16 @@ function Sidebar(props) {
   });
   return (
     <section className="sidebar">
-      <h3>All Journal Entries</h3>
+      <div id="sidebar-header">
+        <h3>All Journal Entries</h3>
+      </div>
       <div
         className={
           props.selectedEntry ? 'sidebar-entry' : 'sidebar-entry selected-entry'
         }
         onClick={() => props.setSelectedEntry(null)}
       >
-        Create an entry
+        CREATE ENTRY
       </div>
       {entryElements}
     </section>

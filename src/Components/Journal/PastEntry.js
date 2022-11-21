@@ -13,16 +13,20 @@ const PastEntry = (props) => {
   return (
     <div>
       <section className="centered">
-        <h1>Past Entry</h1>
+        <h3>Past Entry</h3>
         <section className="past-entry">
           <p className="strong">
-            {new Date(props.entryDetails.date).toLocaleDateString(
-              'en-US',
-              options
-            )}
+            <b>
+              {new Date(props.entryDetails.date).toLocaleDateString(
+                'en-US',
+                options
+              )}
+            </b>
           </p>
           <p>{props.entryDetails.question}</p>
-          <p> {props.entryDetails.answer}</p>
+          <div id="past-entry-text">
+            <p> {props.entryDetails.answer}</p>
+          </div>
         </section>
       </section>
     </div>

@@ -3,6 +3,7 @@ import { getQuestion } from './gratitudeFetch';
 import { nanoid } from 'nanoid';
 import Sidebar from './Sidebar';
 import PastEntry from './PastEntry';
+import { Container, Box, Grid } from '@mui/material';
 
 const Journal = () => {
   const [question, setQuestion] = useState('');
@@ -47,49 +48,55 @@ const Journal = () => {
   }
 
   return (
-    <div className="wrapper">
-      <div>
-        <h3>Deliberate Instrospection</h3>
-        <p>Unlock the many benefits of journaling</p>
-      </div>
-      {pastEntries.length > 0 && (
-        <Sidebar
-          entries={pastEntries}
-          selectedEntry={selectedEntry}
-          setSelectedEntry={setSelectedEntry}
-        />
-      )}
-
-      {selectedEntry ? (
-        <PastEntry entryDetails={getPastEntryData(selectedEntry)} />
-      ) : (
-        <section className="centered">
-          <h1>New entry</h1>
+    <Container>
+      <Box>
+        <div>
+          <h3>Deliberate Instrospection</h3>
+          <p>Unlock the many benefits of journaling</p>
           <div>
-            <p>
-              Take a moment to reflect and write about the following question:{' '}
-            </p>
-            <p className="strong">
-              {question ? question : 'Question loading...'}
-            </p>
-            <textarea
-              onChange={handleChange}
-              id="answer"
-              name="answer"
-            ></textarea>
-            <div className="buttons">
-              <button onClick={handleCancel} id="cancel-button">
-                Cancel
-              </button>
-              <button onClick={handleSubmit}>Save</button>
-            </div>
+            <img src="/static/journal.png" width="1150"></img>
           </div>
-        </section>
-      )}
-      <div>
-        <img src="/static/journal.png" width="600"></img>
-      </div>
-    </div>
+        </div>
+      </Box>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={4} align="center">
+          <Sidebar
+            entries={pastEntries}
+            selectedEntry={selectedEntry}
+            setSelectedEntry={setSelectedEntry}
+          />
+        </Grid>
+
+        <Grid item xs={12} sm={8} align="center">
+          {selectedEntry ? (
+            <PastEntry entryDetails={getPastEntryData(selectedEntry)} />
+          ) : (
+            <section>
+              <h3>New entry</h3>
+              <div id="journal-text">
+                <p>
+                  Take your time reflecting and responding with vulnerability
+                </p>
+                <p className="strong">
+                  {question ? question : 'Fetching question...'}
+                </p>
+                <textarea
+                  onChange={handleChange}
+                  id="answer"
+                  name="answer"
+                ></textarea>
+                <div className="buttons">
+                  <button onClick={handleCancel} id="cancel-button">
+                    Reset
+                  </button>
+                  <button onClick={handleSubmit}>Save</button>
+                </div>
+              </div>
+            </section>
+          )}
+        </Grid>
+      </Grid>
+    </Container>
   );
 };
 
