@@ -86,10 +86,18 @@ const Journal = () => {
                   name="answer"
                 ></textarea>
                 <div className="buttons">
-                  <button onClick={handleCancel} id="cancel-button">
+                  <button
+                    onClick={handleCancel}
+                    className={answer ? 'enabled' : 'disabled'}
+                  >
                     Reset
                   </button>
-                  <button onClick={handleSubmit}>Save</button>
+                  <button
+                    onClick={handleSubmit}
+                    className={answer ? 'enabled' : 'disabled'}
+                  >
+                    Save
+                  </button>
                 </div>
               </div>
             </section>
