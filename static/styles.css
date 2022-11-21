@@ -149,3 +149,12 @@ textarea:focus {
 #past-entry-text {
   padding-left: 20px;
 }
+
+#create-entry {
+  color: #757ce8;
+}
+
+#create-entry:hover {
+  color: #757ce8;
+  text-decoration: underline;
+}

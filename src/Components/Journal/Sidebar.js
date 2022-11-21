@@ -23,6 +23,7 @@ function Sidebar(props) {
         <h3>All Journal Entries</h3>
       </div>
       <div
+        id="create-entry"
         className={
           props.selectedEntry ? 'sidebar-entry' : 'sidebar-entry selected-entry'
         }
