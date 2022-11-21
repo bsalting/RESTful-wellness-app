@@ -1,5 +1,9 @@
 import React from 'react';
 import { Container, Grid } from '@mui/material';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import EmailIcon from '@mui/icons-material/Email';
 
 const Landing = () => {
   return (
@@ -15,34 +19,34 @@ const Landing = () => {
             <div></div>
           </Grid>
           <Grid item xs={12} sm={12} align="center">
-            <div>Hello this</div>
+            <div> Life </div>
           </Grid>
           <Grid item xs={12} sm={12} align="center">
-            <div>Hello this it a dasldklk </div>
+            <div> often throws </div>
           </Grid>
           <Grid item xs={12} sm={12} align="center">
-            <div>Whether you are blah blah blah.</div>
+            <div> us many things all </div>
           </Grid>
           <Grid item xs={12} sm={12} align="center">
-            <div>Hello! Welcome to</div>
+            <div> at once </div>
           </Grid>
           <Grid item xs={12} sm={12} align="center">
-            <div>Hello!</div>
+            <div> Maintaining </div>
           </Grid>
           <Grid item xs={12} sm={12} align="center">
-            <div>Hello!</div>
+            <div> balance is essential for </div>
           </Grid>
           <Grid item xs={12} sm={12} align="center">
-            <div>Welcome to RESTful.</div>
+            <div> our well-being </div>
           </Grid>
           <Grid item xs={12} sm={12} align="center">
-            <div>Whether you are blah blah blah.</div>
+            <div> Find </div>
           </Grid>
           <Grid item xs={12} sm={12} align="center">
-            <div>Hello! Welcome to</div>
+            <div> your center </div>
           </Grid>
           <Grid item xs={12} sm={12} align="center">
-            <div>Hello!</div>
+            <div> today </div>
           </Grid>
           <Grid item xs={12} sm={12} align="center">
             <img src="/static/logo.png" width="400"></img>
@@ -50,7 +54,14 @@ const Landing = () => {
         </Grid>
       </Container>
       <div id="horizon">
-        <p>About US Let's connect </p>
+        <Container>
+          <Grid container>
+            <Grid item xs={12} sm={10} align="left">
+              <br />
+              <EmailIcon /> <FacebookIcon /> <InstagramIcon /> <TwitterIcon />
+            </Grid>
+          </Grid>
+        </Container>
       </div>
     </div>
   );
