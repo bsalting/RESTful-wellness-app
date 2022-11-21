@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLoadScript, GoogleMap, Marker } from '@react-google-maps/api';
 import ParkMarker from './ParkMarker';
+import { Container, Grid, Box } from '@mui/material';
 
 function Park() {
   const [userCoords, setUserCoords] = useState();
@@ -55,39 +56,55 @@ function Park() {
   }
 
   return (
-    <div>
-      <div className="centered">
-        <h1>Some Fresh Air</h1>
-        <p>Nearest green spaces near you:</p>
-      </div>
+    <Container>
+      <Box>
+        <div>
+          <h1>Some Fresh Air</h1>
+          <p>Nearest green spaces near you:</p>
+        </div>
+      </Box>
+      <Box align="center">
+        <div className="map-box">
+          <GoogleMap
+            center={userCoords}
+            zoom={1}
+            mapContainerStyle={{ width: '100%', height: '73%' }}
+            onLoad={(map) => loadPlaces(map)}
+          >
+            <Marker position={userCoords} />
 
-      <div className="map-box">
-        <GoogleMap
-          center={userCoords}
-          zoom={1}
-          mapContainerStyle={{ width: '75%', height: '75%' }}
-          onLoad={(map) => loadPlaces(map)}
-        >
-          <Marker position={userCoords} />
-
-          {parkMarkers}
-        </GoogleMap>
-      </div>
-    </div>
+            {parkMarkers}
+          </GoogleMap>
+        </div>
+      </Box>
+    </Container>
   );
 }
 
 function ErrorDisplay(props) {
   return (
-    <div className="centered">
-      <h1>Some Fresh Air</h1>
-      <p className="strong">You're one walk away from a good mood...</p>
-      <img
-        src="https://i.pinimg.com/originals/c4/f0/38/c4f038c63e6a9bbcde0d5fc574487358.jpg"
-        width="1100px"
-        height="600px"
-      />
-    </div>
+    <Container>
+      <Box>
+        <div>
+          <h1>Some Fresh Air</h1>
+          <span className="strong">
+            You're one walk away from a good mood...
+          </span>
+        </div>
+      </Box>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={12} align="center">
+          <br />
+          <div className="centered">
+            <img
+              src="https://i.pinimg.com/originals/c4/f0/38/c4f038c63e6a9bbcde0d5fc574487358.jpg"
+              width="1155px"
+              height="600px"
+            />
+          </div>
+        </Grid>
+      </Grid>
+    </Container>
   );
 }
 
