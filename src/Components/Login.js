@@ -64,9 +64,6 @@ const Login = () => {
             </Typography>
             <br />
             <br />
-            <Typography component="h1" variant="h5">
-              Sign in
-            </Typography>
             <Box component="form" noValidate onSubmit={login} sx={{ mt: 1 }}>
               <TextField
                 margin="normal"
@@ -79,6 +76,7 @@ const Login = () => {
                 autoFocus
                 value={credentials.username}
                 onChange={onChange}
+                variant="standard"
               />
               <TextField
                 margin="normal"
@@ -91,11 +89,9 @@ const Login = () => {
                 autoComplete="current-password"
                 value={credentials.password}
                 onChange={onChange}
+                variant="standard"
               />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              />
+              <br />
               <Button
                 type="submit"
                 fullWidth

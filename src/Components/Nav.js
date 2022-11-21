@@ -42,6 +42,11 @@ function Nav() {
             <Typography> Gratitude </Typography>
           </Button>
         </Link>
+        <Link underline="hover" key={'Give'} href={'#/journal'}>
+          <Button>
+            <Typography> Give </Typography>
+          </Button>
+        </Link>
       </span>
     </nav>
   );
