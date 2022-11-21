@@ -10,11 +10,7 @@ const Landing = () => {
     <div>
       <Container>
         <Grid container>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
+          <br /> <br /> <br /> <br /> <br />
           <Grid item xs={12} sm={12} align="center">
             <div></div>
           </Grid>
@@ -22,7 +18,7 @@ const Landing = () => {
             <div> Life </div>
           </Grid>
           <Grid item xs={12} sm={12} align="center">
-            <div> often throws </div>
+            <div> often gives </div>
           </Grid>
           <Grid item xs={12} sm={12} align="center">
             <div> us many things all </div>
