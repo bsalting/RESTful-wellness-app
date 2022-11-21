@@ -14,8 +14,36 @@ form > * {
   margin: 1rem;
 }
 
+#player {
+  padding-top: 10vh;
+  padding-left: 10vw;
+}
+
+.timer {
+  font-family: 'Lucida Grande';
+  color: #b2b2b2;
+  font-size: 4rem;
+  border-radius: 15px;
+  border: 5px solid #d8d9cf;
+  width: 220px;
+  background-color: #f7f7f7;
+}
+
+.buttons {
+  margin: 30px;
+}
+
+#player-button {
+  margin-right: 20px;
+}
+
+.player-buttons {
+  padding: 30px;
+}
+
 #div-nav {
   background-color: #ede4e0;
+  padding-left: 100px;
 }
 nav {
   display: flex;
@@ -46,4 +74,12 @@ nav a {
 
 .active:hover {
   cursor: default;
+}
+
+.logo-span {
+  margin-left: 100px;
+}
+
+.link-span {
+  margin-right: 100px;
 }

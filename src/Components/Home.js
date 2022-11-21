@@ -9,8 +9,8 @@ const Home = () => {
   const dispatch = useDispatch();
 
   return (
-    <div id="div-nav">
-      <div>
+    <div>
+      <div id="div-nav">
         Peace, {auth.username}!
         <Button onClick={() => dispatch(logout())}>Logout</Button>
       </div>
