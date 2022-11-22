@@ -59,7 +59,14 @@ const Give = () => {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small">Learn More</Button>
+                    <Button
+                      size="small"
+                      onClick={() => {
+                        window.open(cause.profileUrl);
+                      }}
+                    >
+                      Learn More
+                    </Button>
                   </CardActions>
                 </Card>
               </Grid>
