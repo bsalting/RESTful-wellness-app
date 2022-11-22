@@ -38,7 +38,7 @@ const Give = () => {
     <div>
       <Container>
         <h2>Support a cause</h2>
-
+        <p>Fact: generosity makes us healthier, happier humans.</p>
         <Grid container spacing={6} align="center">
           {causes.map((cause) => {
             return (
