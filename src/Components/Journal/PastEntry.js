@@ -27,6 +27,13 @@ const PastEntry = (props) => {
           <div id="past-entry-text">
             <p> {props.entryDetails.answer}</p>
           </div>
+          <div id="past-entry-emotion">
+            <p>
+              {' '}
+              Emotion detected:{' '}
+              {props.entryDetails.emotion.toString().replace(/"/g, '')}
+            </p>
+          </div>
         </section>
       </section>
     </div>

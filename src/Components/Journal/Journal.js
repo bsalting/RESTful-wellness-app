@@ -4,10 +4,12 @@ import { nanoid } from 'nanoid';
 import Sidebar from './Sidebar';
 import PastEntry from './PastEntry';
 import { Container, Box, Grid } from '@mui/material';
+import axios from 'axios';
 
 const Journal = () => {
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
+  const [emotion, setEmotion] = useState('');
 
   const [pastEntries, setPastEntries] = useState(
     () => JSON.parse(localStorage.getItem('journalEntries')) || []
@@ -28,15 +30,37 @@ const Journal = () => {
     setAnswer(event.target.value);
   }
 
+  const options = {
+    method: 'GET',
+    url: 'https://twinword-emotion-analysis-v1.p.rapidapi.com/analyze/',
+    params: {
+      text: answer,
+    },
+    headers: {
+      'X-RapidAPI-Key': '4ea22d6f7fmsh7703c9431b9367dp14675cjsnb1f08b5e6743',
+      'X-RapidAPI-Host': 'twinword-emotion-analysis-v1.p.rapidapi.com',
+    },
+  };
+
   function handleSubmit() {
-    const newEntry = {
-      id: nanoid(),
-      date: new Date(),
-      question: question,
-      answer: answer,
-    };
-    setPastEntries([newEntry, ...pastEntries]);
-    document.getElementById('answer').value = '';
+    axios
+      .request(options)
+      .then(function (response) {
+        console.log(response.data);
+        setEmotion(JSON.stringify(response.data.emotions_detected));
+        const newEntry = {
+          id: nanoid(),
+          date: new Date(),
+          question: question,
+          answer: answer,
+          emotion: emotion,
+        };
+        setPastEntries([newEntry, ...pastEntries]);
+        document.getElementById('answer').value = '';
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
   }
 
   function handleCancel() {
@@ -88,12 +112,14 @@ const Journal = () => {
                 <div className="buttons">
                   <button
                     onClick={handleCancel}
+                    id="cancel-button"
                     className={answer ? 'enabled' : 'disabled'}
                   >
                     Reset
                   </button>
                   <button
                     onClick={handleSubmit}
+                    id="save-button"
                     className={answer ? 'enabled' : 'disabled'}
                   >
                     Save

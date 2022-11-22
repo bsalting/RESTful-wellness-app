@@ -160,7 +160,7 @@ textarea:focus {
 }
 
 #past-entry-text {
-  padding-left: 20px;
+  padding: 0 10px 0 0;
 }
 
 #create-entry {
@@ -170,4 +170,10 @@ textarea:focus {
 #create-entry:hover {
   color: #757ce8;
   text-decoration: underline;
+}
+
+#past-entry-emotion {
+  text-align: right;
+  font-weight: bold;
+  padding: 10px 20px 0 0;
 }
