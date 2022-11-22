@@ -1,58 +1,74 @@
 import React, { useState, useEffect } from 'react';
+import {
+  Container,
+  Grid,
+  Card,
+  CardMedia,
+  CardContent,
+  CardActions,
+  Typography,
+  Button,
+} from '@mui/material';
+import axios from 'axios';
 
 const Give = () => {
-  return <hr />;
-  //   (<div>
-  //            <div id="edo-donate-btn">
-  //       <a href="https://www.every.org/lilbubsbigfund/donate">Donate</a>
-  //     </div>
-  //     <script
-  //       async
-  //       defer
-  //       src="https://assets.every.org/dist/donate-button/0.3/index.js"
-  //       class="edo-donate-btn-js"
-  //     ></script>
-  //     <script>
-  //       function createWidget() {
-  //         const COLOR = "#00a380";
-  //         everyDotOrgDonateButton.createButton({
-  //           selector: "#edo-donate-btn",
-  //           bgColor: COLOR,
-  //         });
-  //         everyDotOrgDonateButton.createWidget({
-  //           selector: "#edo-donate-btn",
-  //           options: {
-  //             nonprofitSlug: "lilbubsbigfund",
-  //             primaryColor: COLOR,
-  //             showInitialMessage: false,
-  //             defaultFrequency: "once",
-  //             infoPages: [
-  //               {
-  //                 key: "faq",
-  //                 name: "FAQ",
-  //                 source: `## How does this donate button work?
-  //         This button is powered by Every.org, a tax-exempt US 501(c)(3) nonprofit building accessible giving infrastructure to help every person and organization do more good.
-  //               `,
-  //               },
-  //             ],
-  //             currencies: [
-  //               {
-  //                 countryCodes: ["US"],
-  //                 name: "USD",
-  //                 symbol: "$",
-  //                 minimumAmount: 10,
-  //               },
-  //             ],
-  //           },
-  //         });
-  //       }
-  //       if (window.everyDotOrgDonateButton) {
-  //         createWidget();
-  //       } else {
-  //         document.querySelector(".edo-donate-btn-js").onload = createWidget;
-  //       }
-  //     </script>
-  // </div>
-  //     )
+  useEffect(() => {
+    const searchKey = 'mental-health';
+    const myPublicApiKey = '	c1376197b59677facd5b240f0428da0a';
+    const options = {
+      method: 'GET',
+      url: `https://partners.every.org/v0.2/search/${searchKey}?apiKey=${myPublicApiKey}`,
+    };
+
+    (async (options) => {
+      axios
+        .request(options)
+        .then(function (response) {
+          console.log(response.data.nonprofits);
+          setCauses(response.data.nonprofits);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    })(options);
+  }, []);
+
+  const [causes, setCauses] = useState([]);
+  return (
+    <div>
+      <Container>
+        <h2>Support a cause</h2>
+
+        <Grid container spacing={6} align="center">
+          {causes.map((cause) => {
+            return (
+              <Grid item xs={12} sm={6} key={cause.ein}>
+                <Card sx={{ maxWidth: 550 }}>
+                  <CardMedia
+                    component="img"
+                    alt="RESTful Cause"
+                    height="150"
+                    image={cause.coverImageUrl}
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h6">
+                      {cause.name}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {cause.description}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small">Learn More</Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+            );
+          })}
+        </Grid>
+      </Container>
+    </div>
+  );
 };
+
 export default Give;

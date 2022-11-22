@@ -11,8 +11,6 @@ function Park() {
   const [weather, setWeather] = useState('');
   const [temperature, setTemperature] = useState('');
 
-  let currWeather = {};
-
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
