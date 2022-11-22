@@ -9,7 +9,6 @@ import axios from 'axios';
 const Journal = () => {
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
-  const [emotion, setEmotion] = useState('');
 
   const [pastEntries, setPastEntries] = useState(
     () => JSON.parse(localStorage.getItem('journalEntries')) || []
@@ -46,14 +45,12 @@ const Journal = () => {
     axios
       .request(options)
       .then(function (response) {
-        console.log(response.data);
-        setEmotion(JSON.stringify(response.data.emotions_detected));
         const newEntry = {
           id: nanoid(),
           date: new Date(),
           question: question,
           answer: answer,
-          emotion: emotion,
+          emotion: JSON.stringify(response.data.emotions_detected),
         };
         setPastEntries([newEntry, ...pastEntries]);
         document.getElementById('answer').value = '';

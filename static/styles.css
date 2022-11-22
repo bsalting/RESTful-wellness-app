@@ -87,6 +87,7 @@ textarea {
   font-family: 'Lucida Grande';
   border: 3px solid #ede4e0;
   padding: 20px;
+  border-radius: 8px;
 }
 
 textarea:focus {
@@ -135,6 +136,7 @@ textarea:focus {
   text-overflow: ellipsis;
   text-align: left;
   padding: 10px 10px 10px 20px;
+  border-bottom: 1px solid #ede4e0;
 }
 
 .sidebar-entry:hover {
