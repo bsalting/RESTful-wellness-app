@@ -72,7 +72,7 @@ const Journal = () => {
     <Container>
       <Box>
         <div>
-          <h3>Deliberate Instrospection</h3>
+          <h2>Deliberate Instrospection</h2>
           <p>Unlock the many benefits of journaling</p>
           <div>
             <img src="/static/journal.png" width="1150"></img>

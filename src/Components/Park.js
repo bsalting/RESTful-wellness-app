@@ -2,11 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useLoadScript, GoogleMap, Marker } from '@react-google-maps/api';
 import ParkMarker from './ParkMarker';
 import { Container, Grid, Box } from '@mui/material';
+import axios from 'axios';
 
 function Park() {
   const [userCoords, setUserCoords] = useState();
   const [libraries] = useState(['places']);
   const [parkMarkers, setParkMarkers] = useState([]);
+  const [weather, setWeather] = useState('');
+  let currWeather = {};
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -16,6 +19,9 @@ function Park() {
           lng: position.coords.longitude,
         };
         setUserCoords(latLng);
+        (async () => {
+          getWeather(latLng.lat, latLng.lng);
+        })();
       },
       () => {
         return <ErrorDisplay />;
@@ -55,12 +61,38 @@ function Park() {
     });
   }
 
+  function getWeather(lat, lng) {
+    const options = {
+      method: 'GET',
+      url: `https://dark-sky.p.rapidapi.com/${lat},${lng}`,
+      params: { units: 'auto', lang: 'en' },
+      headers: {
+        'X-RapidAPI-Key': '4ea22d6f7fmsh7703c9431b9367dp14675cjsnb1f08b5e6743',
+        'X-RapidAPI-Host': 'dark-sky.p.rapidapi.com',
+      },
+    };
+
+    axios
+      .request(options)
+      .then(function (response) {
+        setWeather(response.data.currently.summary);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  }
+
   return (
     <Container>
       <Box>
         <div>
-          <h1>Some Fresh Air</h1>
-          <p>Nearest green spaces near you:</p>
+          <h2>Some Fresh Air</h2>
+          <p>
+            Take leisure at green spaces near you.
+            <span id="weather-tag">
+              Today's weather: <b>{weather} </b>
+            </span>
+          </p>
         </div>
       </Box>
       <Box align="center">
@@ -86,7 +118,7 @@ function ErrorDisplay(props) {
     <Container>
       <Box>
         <div>
-          <h1>Some Fresh Air</h1>
+          <h2>Some Fresh Air</h2>
           <span className="strong">
             You're one walk away from a good mood...
           </span>

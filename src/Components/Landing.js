@@ -24,7 +24,7 @@ const Landing = () => {
             <div> us many things all </div>
           </Grid>
           <Grid item xs={12} sm={12} align="center">
-            <div> at once </div>
+            <div> at once. </div>
           </Grid>
           <Grid item xs={12} sm={12} align="center">
             <div> Maintaining </div>
@@ -33,7 +33,7 @@ const Landing = () => {
             <div> balance is essential for </div>
           </Grid>
           <Grid item xs={12} sm={12} align="center">
-            <div> our well-being </div>
+            <div> our well-being. </div>
           </Grid>
           <Grid item xs={12} sm={12} align="center">
             <div> Find </div>
@@ -42,7 +42,7 @@ const Landing = () => {
             <div> your center </div>
           </Grid>
           <Grid item xs={12} sm={12} align="center">
-            <div> today </div>
+            <div> today. </div>
           </Grid>
           <Grid item xs={12} sm={12} align="center">
             <img src="/static/logo.png" width="400"></img>

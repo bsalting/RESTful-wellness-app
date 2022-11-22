@@ -62,7 +62,7 @@ const Meditation = () => {
   return (
     <Container>
       <div className="centered">
-        <h1>Minutes of Mindfulness</h1>
+        <h2>Minutes of Mindfulness</h2>
         <p>Pause. Be still and fully present.</p>
       </div>
       <Grid container spacing={2}>
