@@ -9,6 +9,8 @@ function Park() {
   const [libraries] = useState(['places']);
   const [parkMarkers, setParkMarkers] = useState([]);
   const [weather, setWeather] = useState('');
+  const [temperature, setTemperature] = useState('');
+
   let currWeather = {};
 
   useEffect(() => {
@@ -75,7 +77,9 @@ function Park() {
     axios
       .request(options)
       .then(function (response) {
+        console.log(response.data);
         setWeather(response.data.currently.summary);
+        setTemperature(response.data.currently.temperature);
       })
       .catch(function (error) {
         console.error(error);
@@ -90,7 +94,10 @@ function Park() {
           <p>
             Take leisure at green spaces near you.
             <span id="weather-tag">
-              Today's weather: <b>{weather} </b>
+              Today's weather:{' '}
+              <b>
+                {weather} ({temperature}F)
+              </b>
             </span>
           </p>
         </div>
